@@ -28,4 +28,28 @@ let a = {
     }
 };
 
-console.log(a)
+let users = [
+    {
+        name: "Egor",
+        age: 10,
+        address: {
+            city: "Minsk",
+            country: "Belarus"
+        }
+    },
+    {
+        name: "Dima",
+        age: 20,
+        address: {
+            city: "Moscow",
+            country: "Russia"
+        }
+    }
+]
+
+let b: Array<string | number>; //any, boolean, number
+b = ["yo", "eese", "wewewe"]
+b = [1, 23, 434, 344]
+b = true
+
+console.log(users[0].address.country)
