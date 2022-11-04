@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 
-function App() {
+//function declaration
+const App = function() {
   return (
     <div >
 This is App component
