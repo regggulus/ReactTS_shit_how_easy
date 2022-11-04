@@ -5,11 +5,19 @@ import './App.css';
 function App() {
     return (
         <div>
-            This is App component
+            <AppTitle/>
             <Rating/>
             <Accordion/>
         </div>
     );
+}
+
+function AppTitle() {
+    return (
+        <div>
+            <h2>This is App component</h2>
+        </div>
+    )
 }
 
 function Rating() {
