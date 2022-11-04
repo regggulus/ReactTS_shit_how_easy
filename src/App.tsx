@@ -22,23 +22,31 @@ function AppTitle() {
 
 function Rating() {
     return <div>
-       <Star/>
-       <Star/>
-       <Star/>
-       <Star/>
-       <Star/>
+        <Star/>
+        <Star/>
+        <Star/>
+        <Star/>
+        <Star/>
     </div>
 }
 
 function Accordion() {
     return (
         <div>
-            <h2>Menu</h2>
+<AccordionTitle/>
             <ul>
                 <li>1</li>
                 <li>2</li>
                 <li>3</li>
             </ul>
+        </div>
+    )
+}
+
+function AccordionTitle() {
+    return (
+        <div>
+            <h2>Menu</h2>
         </div>
     )
 }
