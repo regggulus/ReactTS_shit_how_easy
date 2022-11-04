@@ -6,6 +6,7 @@ function App() {
     return (
         <div>
             This is App component
+            <Rating/>
         </div>
     );
 }
