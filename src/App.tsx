@@ -3,7 +3,7 @@ import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 
-//function declaration
+
 function App() {
     return (
         <div>
@@ -20,7 +20,12 @@ function App() {
         </div>
     );
 }
-function PageTitle(props: any) {
+
+type PageTitleProsType = {
+    title: string
+}
+
+function PageTitle(props: PageTitleProsType) {
     return (
         <div>
             <h2>{props.title}</h2>
