@@ -23,7 +23,7 @@ type StarPropsType = {
 }
 
 function Star(props: StarPropsType) {
-    return props.selected ? <span><b>star </b></span> : <span>star </span>
+    return props.selected ? <span style={{color: 'gold'}}><b>star </b></span> : <span>star </span>
 
     /*if (props.selected === true) {
         return <span><b>star </b></span>

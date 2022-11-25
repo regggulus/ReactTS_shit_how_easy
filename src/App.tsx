@@ -9,9 +9,12 @@ import {UnControlledRating} from "./components/UnControlledRating/UnControlledRa
 
 function App() {
     return (
-        <div>
-            <OnOffButton/>
-            <OnOffButton/>
+        <div className={'App-header'}>
+            <div >
+                <OnOffButton/>
+                <OnOffButton/>
+            </div>
+
             <UnControlledRating/>
             <Accordion titleValue={"Menu"} collapsed={true}/>
             <Accordion titleValue={"Users"} collapsed={false}/>
