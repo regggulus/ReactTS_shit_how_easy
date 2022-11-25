@@ -1,17 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './OnOffButton.css'
 
 
 
 
 export function OnOffButton() {
-    const click = false
+    let [on, setOn] = useState(false)
+
     const onOff = {
         display: 'flex',
         alignItems: 'center',
         width: '200px',
         height: '75px',
-        border: click ? '5px solid greenyellow' : '5px solid coral',
+        border: on ? '5px solid greenyellow' : '5px solid coral',
         borderRadius: '10px',
         margin: '10px'
     }
@@ -22,7 +23,7 @@ export function OnOffButton() {
         borderRadius: '10px',
         fontSize: '20px',
         margin: '10px',
-        background: click ? 'greenyellow' : "white"
+        background: on ? 'greenyellow' : "white"
     }
     const offStyle = {
         width: '50px',
@@ -31,7 +32,7 @@ export function OnOffButton() {
         borderRadius: '10px',
         fontSize: '20px',
         margin: '10px',
-        background: click ? 'white' : 'coral'
+        background: on ? 'white' : 'coral'
     }
     const indicatorStyle = {
         width: '30px',
@@ -39,12 +40,13 @@ export function OnOffButton() {
         borderRadius: '50px',
         border: '3px solid black',
         margin: '10px',
-        background: click ? 'greenyellow' : 'coral'
+        background: on ? 'greenyellow' : 'coral'
     }
+
         return (
             <div style={onOff}>
-                <div style={onStyle}>On</div>
-                <div style={offStyle}>Off</div>
+                <div style={onStyle} onClick={ () => {setOn(true)}}>On</div>
+                <div style={offStyle} onClick={ () => {setOn(false)}}>Off</div>
                 <div style={indicatorStyle}></div>
 
             </div>

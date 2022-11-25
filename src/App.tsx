@@ -9,6 +9,8 @@ function App() {
     return (
         <div>
             <OnOffButton />
+            <OnOffButton />
+            <OnOffButton />
 
             <Accordion titleValue = {"Menu"} collapsed={true}/>
             <Accordion titleValue = {"Users"} collapsed={false}/>
