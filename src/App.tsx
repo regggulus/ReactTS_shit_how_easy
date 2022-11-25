@@ -4,19 +4,20 @@ import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import {OnOffButton} from "./components/onOff_button/OnOffButton";
 import {UnControlledAccordion} from "./components/UnControlledAccordion/UnControlledAccordion";
+import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
 
 
 function App() {
     return (
         <div>
-            <OnOffButton />
-            <OnOffButton />
-
-            <Accordion titleValue = {"Menu"} collapsed={true}/>
-            <Accordion titleValue = {"Users"} collapsed={false}/>
-            <OnOffButton />
-            <UnControlledAccordion titleValue = {"Menu"} />
-            <UnControlledAccordion titleValue = {"Users"}/>
+            <OnOffButton/>
+            <OnOffButton/>
+            <UnControlledRating/>
+            <Accordion titleValue={"Menu"} collapsed={true}/>
+            <Accordion titleValue={"Users"} collapsed={false}/>
+            <OnOffButton/>
+            <UnControlledAccordion titleValue={"Menu"}/>
+            <UnControlledAccordion titleValue={"Users"}/>
             <Rating value={0}/>
             <Rating value={1}/>
             <Rating value={2}/>
@@ -40,8 +41,6 @@ function PageTitle(props: PageTitleProsType) {
         </div>
     )
 }
-
-
 
 
 export default App;
