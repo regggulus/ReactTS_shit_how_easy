@@ -6,7 +6,7 @@ type RatingProsType = {
 
 export function UnControlledRating(props: RatingProsType) {
 
-    const [value, setValue] = useState(0 | 1 | 2 | 3 | 4 | 5)
+    const [value, setValue] = useState(0)
     return (
         <div>
             <Star selected={value > 0}/><button onClick={ () => {setValue(1)}}>1</button>

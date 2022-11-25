@@ -10,10 +10,8 @@ import {UnControlledRating} from "./components/UnControlledRating/UnControlledRa
 function App() {
     return (
         <div className={'App-header'}>
-            <div >
+               <PageTitle title={'React TS shit how easy'}/>
                 <OnOffButton/>
-                <OnOffButton/>
-            </div>
 
             <UnControlledRating/>
             <Accordion titleValue={"Menu"} collapsed={true}/>
@@ -36,7 +34,6 @@ function App() {
 type PageTitleProsType = {
     title: string
 }
-
 function PageTitle(props: PageTitleProsType) {
     return (
         <div>
