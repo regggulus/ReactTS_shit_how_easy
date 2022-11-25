@@ -8,7 +8,8 @@ import {OnOffButton} from "./components/onOff_button/OnOffButton";
 function App() {
     return (
         <div>
-            <OnOffButton click={true}/>
+            <OnOffButton />
+
             <Accordion titleValue = {"Menu"} collapsed={true}/>
             <Accordion titleValue = {"Users"} collapsed={false}/>
             <Rating value={0}/>
