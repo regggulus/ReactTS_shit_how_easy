@@ -2,39 +2,53 @@ import React from 'react';
 import './OnOffButton.css'
 
 
-type OnOffButtonType = {
-    click: boolean
-}
-
-export function OnOffButton(props: OnOffButtonType) {
-   /* return (
-        <div className={'onOff'}>
-            <OnButton />
-            <Circle/>
-            {!props.click}
-        </div>
-    )*/
-      if (props.click === true) {
-          return (
-              <div style={{borderColor: 'greenyellow'}} className={'onOff'}>
-                  <div style={{background: 'greenyellow'}} className={'on'}>{props.click}On</div>
-                  <div style={{background: 'white'}} className={'on'}>{props.click}Off</div>
-
-              </div>
-              )
-
-      } else {
-          return (
-              <div style={{borderColor: 'coral'}} className={'onOff'}>
-                  <div style={{background: 'white'}} className={'on'}>{props.click}On</div>
-                  <div style={{background: 'coral'}} className={'on'}>{props.click}Off</div>
-                  <div style={{background: 'coral'}} className={'circle'}></div>
-              </div>
-
-              )
 
 
-      }
+export function OnOffButton() {
+    const click = false
+    const onOff = {
+        display: 'flex',
+        alignItems: 'center',
+        width: '200px',
+        height: '75px',
+        border: click ? '5px solid greenyellow' : '5px solid coral',
+        borderRadius: '10px',
+        margin: '10px'
+    }
+    const onStyle = {
+        width: '50px',
+        height: '35px',
+        border: '3px solid black',
+        borderRadius: '10px',
+        fontSize: '20px',
+        margin: '10px',
+        background: click ? 'greenyellow' : "white"
+    }
+    const offStyle = {
+        width: '50px',
+        height: '35px',
+        border: '3px solid black',
+        borderRadius: '10px',
+        fontSize: '20px',
+        margin: '10px',
+        background: click ? 'white' : 'coral'
+    }
+    const indicatorStyle = {
+        width: '30px',
+        height: '30px',
+        borderRadius: '50px',
+        border: '3px solid black',
+        margin: '10px',
+        background: click ? 'greenyellow' : 'coral'
+    }
+        return (
+            <div style={onOff}>
+                <div style={onStyle}>On</div>
+                <div style={offStyle}>Off</div>
+                <div style={indicatorStyle}></div>
+
+            </div>
+        )
 
 
 };
