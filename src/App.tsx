@@ -1,32 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
+import {Rating, SetRatingPropsType} from "./components/Rating/Rating";
 import {OnOffButton} from "./components/onOff_button/OnOffButton";
 import {UnControlledAccordion} from "./components/UnControlledAccordion/UnControlledAccordion";
 import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
 
 
 function App() {
+    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
+ let [ratingValue, setRatingValue] = useState<SetRatingPropsType>(0)
     return (
         <div className={'App-header'}>
                <PageTitle title={'React TS shit how easy'}/>
                 <OnOffButton/>
 
-            <UnControlledRating/>
-            <Accordion titleValue={"Menu"} collapsed={true}/>
-            <Accordion titleValue={"Users"} collapsed={false}/>
+            <UnControlledRating />
+            <Accordion titleValue={"Menu"} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
+
             <OnOffButton/>
             <UnControlledAccordion titleValue={"Menu"}/>
             <UnControlledAccordion titleValue={"Users"}/>
-            <Rating value={0}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
-
-
+            <Rating value={ratingValue} onClick={setRatingValue}/>
         </div>
     );
 }
