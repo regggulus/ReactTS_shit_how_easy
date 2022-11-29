@@ -24,5 +24,6 @@ type StarPropsType = {
     onClick: (value: SetRatingPropsType) => void
 }
 function Star(props: StarPropsType) {
-    return <span onClick={ () => {props.onClick(props.value)}}>{props.selected ? <b style={{color: 'greenyellow'}}>star </b> : 'star'}</span>
+    const onClickStar = () => {props.onClick(props.value)}
+    return <span onClick={ onClickStar}>{props.selected ? <b style={{color: 'greenyellow'}}>star </b> : 'star'}</span>
 }
