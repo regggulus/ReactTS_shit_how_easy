@@ -12,10 +12,11 @@ function App() {
     let [switchOn, setSwitchOn] = useState<boolean>(false)
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     let [ratingValue, setRatingValue] = useState<SetRatingPropsType>(0)
+    const [on, setOn] = useState(true)
     return (
         <div className={'App-header'}>
             <PageTitle title={'React TS shit how easy'}/>
-            <OnOffButton/>
+            <OnOffButton on={on} onClick={setOn}/>
             <UnControlledOnOff on={switchOn} onChange={setSwitchOn}/>{switchOn.toString()}
             <UnControlledRating/>
             <Accordion titleValue={"Menu"}
@@ -23,8 +24,6 @@ function App() {
                        onChange={() => {
                            setAccordionCollapsed(!accordionCollapsed)
                        }}/>
-
-            <OnOffButton/>
             <UnControlledAccordion titleValue={"Menu"}/>
             <UnControlledAccordion titleValue={"Users"}/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
