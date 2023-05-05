@@ -1,16 +1,16 @@
 import React, {useState} from "react";
 import {OnOffButton} from "./OnOffButton";
+import {action} from '@storybook/addon-actions'
 
 
 export default {
     title: 'OnOff stories',
     component: OnOffButton
 }
-
-export const EmptyOnOff = () => <OnOffButton onClick={() => {}} on={true}/>
-export const OnOff1 = () => <OnOffButton onClick={x=>x} on={false}/>
-export const OnOff2 = () => <OnOffButton onClick={x=>x} on={true}/>
+const callback = () => {action('on or off clicked')}
+export const OnMode = () => <OnOffButton onClick={callback} on={true}/>
+export const OffMode = () => <OnOffButton onClick={callback} on={false}/>
 export const OnOffChanging = () => {
-    const [onOff, setOnOff] = useState(false)
-    return <OnOffButton on={onOff} onClick={setOnOff}/>
+    const [value, setValue] = useState<boolean>(false)
+    return <OnOffButton on={value} onClick={setValue}/>
 }

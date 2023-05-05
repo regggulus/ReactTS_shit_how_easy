@@ -3,8 +3,8 @@ import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating, SetRatingPropsType} from "./components/Rating/Rating";
 import {OnOffButton} from "./components/onOff_button/OnOffButton";
-import {UnControlledAccordion} from "./components/UnControlledAccordion/UnControlledAccordion";
-import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
+import {UnControlledAccordion} from "./components/unControlledAccordion/UnControlledAccordion";
+import {UnControlledRating} from "./components/unControlledRating/UnControlledRating";
 import {UnControlledOnOff} from "./components/unControlledOnOff/UnControlledOnOff";
 
 
