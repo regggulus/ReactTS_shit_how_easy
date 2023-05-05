@@ -1,11 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
+import './UnControlledOnOff.css'
 
 type UnControlledOnOffType = {
     on: boolean
-    onChange: (value: boolean)=> void
+    onChange: (value: boolean) => void
 
 }
-export function UnControlledOnOff (props: UnControlledOnOffType) {
+
+export function UnControlledOnOff(props: UnControlledOnOffType) {
     const onOff = {
         display: 'flex',
         alignItems: 'center',
@@ -41,17 +43,27 @@ export function UnControlledOnOff (props: UnControlledOnOffType) {
         margin: '10px',
         background: props.on ? 'hotpink' : 'deepskyblue'
     }
-    const onClicked = () =>  {props.onChange(true)}
-    const offClicked =  () => {props.onChange(false)}
+    const onClicked = () => {
+        props.onChange(true)
+    }
+    const offClicked = () => {
+        props.onChange(false)
+    }
 
-        return (
+    return (
+        <div className={'UnControlled'}>
+            <div>
+                <h2> Un Controlled On Off</h2>
+            </div>
             <div style={onOff}>
                 <div style={onStyle} onClick={onClicked}>On</div>
                 <div style={offStyle} onClick={offClicked}>Off</div>
                 <div style={indicatorStyle}></div>
 
             </div>
-        )
+        </div>
+
+    )
 
 
 };
