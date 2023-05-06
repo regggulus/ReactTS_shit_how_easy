@@ -6,6 +6,7 @@ import {OnOffButton} from "./components/onOff_button/OnOffButton";
 import {UnControlledAccordion} from "./components/unControlledAccordion/UnControlledAccordion";
 import {UnControlledRating} from "./components/unControlledRating/UnControlledRating";
 import {UnControlledOnOff} from "./components/unControlledOnOff/UnControlledOnOff";
+import {number} from "prop-types";
 
 
 function App() {
@@ -30,8 +31,8 @@ function App() {
 
             <h3 className={'header-h3'} >Un controlled components</h3>
 
-            <UnControlledOnOff onChange={() => {true}}/>
-            <UnControlledRating/>
+            <UnControlledOnOff onChange={() => {}}/>
+            <UnControlledRating onChange={()=>{}} />
             <UnControlledAccordion titleValue={"Menu"}/>
             <UnControlledAccordion titleValue={"Users"}/>
 
