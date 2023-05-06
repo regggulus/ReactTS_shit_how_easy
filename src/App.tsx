@@ -10,7 +10,6 @@ import {number} from "prop-types";
 
 
 function App() {
-    /*let [switchOn, setSwitchOn] = useState<boolean>(false)*/
     let [accordionCollapsed, setAccordionCollapsed] =
         useState<boolean>(false)
     let [ratingValue, setRatingValue] =
@@ -52,6 +51,4 @@ function PageTitle(props: PageTitleProsType) {
         </div>
     )
 }
-
-
 export default App;
