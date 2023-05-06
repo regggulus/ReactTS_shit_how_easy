@@ -1,19 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './UnControlledOnOff.css'
 
 type UnControlledOnOffType = {
-    on: boolean
-    onChange: (value: boolean) => void
+    // on: boolean
+    onChange: (on: boolean) => void
+    defaultOn?: boolean
 
 }
 
 export function UnControlledOnOff(props: UnControlledOnOffType) {
+    let [on, setOn] = useState<boolean>(props.defaultOn ? props.defaultOn : false)
     const onOff = {
         display: 'flex',
         alignItems: 'center',
         width: '200px',
         height: '75px',
-        border: props.on ? '5px solid hotpink' : '5px solid deepskyblue',
+        border: on ? '5px solid greenyellow' : '5px solid deepskyblue',
         borderRadius: '10px',
         margin: '10px'
     }
@@ -24,7 +26,7 @@ export function UnControlledOnOff(props: UnControlledOnOffType) {
         borderRadius: '10px',
         fontSize: '20px',
         margin: '10px',
-        background: props.on ? 'hotpink' : "white"
+        background: on ? 'greenyellow' : "white"
     }
     const offStyle = {
         width: '50px',
@@ -33,7 +35,7 @@ export function UnControlledOnOff(props: UnControlledOnOffType) {
         borderRadius: '10px',
         fontSize: '20px',
         margin: '10px',
-        background: props.on ? 'white' : 'deepskyblue'
+        background: on ? 'white' : 'deepskyblue'
     }
     const indicatorStyle = {
         width: '30px',
@@ -41,26 +43,22 @@ export function UnControlledOnOff(props: UnControlledOnOffType) {
         borderRadius: '50px',
         border: '3px solid black',
         margin: '10px',
-        background: props.on ? 'hotpink' : 'deepskyblue'
+        background: on ? 'greenyellow' : 'deepskyblue'
     }
     const onClicked = () => {
+        setOn(true)
         props.onChange(true)
     }
     const offClicked = () => {
+        setOn(false)
         props.onChange(false)
     }
 
     return (
-        <div className={'UnControlled'}>
-            <div>
-                <h2> Un Controlled On Off</h2>
-            </div>
             <div style={onOff}>
                 <div style={onStyle} onClick={onClicked}>On</div>
                 <div style={offStyle} onClick={offClicked}>Off</div>
                 <div style={indicatorStyle}></div>
-
-            </div>
         </div>
 
     )

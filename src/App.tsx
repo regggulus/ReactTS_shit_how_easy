@@ -9,24 +9,33 @@ import {UnControlledOnOff} from "./components/unControlledOnOff/UnControlledOnOf
 
 
 function App() {
-    let [switchOn, setSwitchOn] = useState<boolean>(false)
-    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
-    let [ratingValue, setRatingValue] = useState<SetRatingPropsType>(0)
-    const [on, setOn] = useState(true)
+    /*let [switchOn, setSwitchOn] = useState<boolean>(false)*/
+    let [accordionCollapsed, setAccordionCollapsed] =
+        useState<boolean>(false)
+    let [ratingValue, setRatingValue] =
+        useState<SetRatingPropsType>(0)
+    const [on, setOn] =
+        useState(true)
     return (
         <div className={'App-header'}>
             <PageTitle title={'React TS shit how easy'}/>
+            <h3 className={'header-h3'} >Controlled components</h3>
             <OnOffButton on={on} onClick={setOn}/>
-            <UnControlledOnOff on={switchOn} onChange={setSwitchOn}/>{switchOn.toString()}
-            <UnControlledRating/>
             <Accordion titleValue={"Menu"}
                        collapsed={accordionCollapsed}
                        onChange={() => {
                            setAccordionCollapsed(!accordionCollapsed)
                        }}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+
+            <h3 className={'header-h3'} >Un controlled components</h3>
+
+            <UnControlledOnOff onChange={() => {true}}/>
+            <UnControlledRating/>
             <UnControlledAccordion titleValue={"Menu"}/>
             <UnControlledAccordion titleValue={"Users"}/>
-            <Rating value={ratingValue} onClick={setRatingValue}/>
+
+
         </div>
     );
 }
