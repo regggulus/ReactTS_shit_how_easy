@@ -22,6 +22,7 @@ function App() {
             <h3 className={'header-h3'} >Controlled components</h3>
             <OnOffButton on={on} onClick={setOn}/>
             <Accordion titleValue={"Menu"}
+                       items={[]}
                        collapsed={accordionCollapsed}
                        onChange={() => {
                            setAccordionCollapsed(!accordionCollapsed)
