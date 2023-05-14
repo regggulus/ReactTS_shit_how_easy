@@ -7,6 +7,7 @@ import {UnControlledAccordion} from "./components/unControlledAccordion/UnContro
 import {UnControlledRating} from "./components/unControlledRating/UnControlledRating";
 import {UnControlledOnOff} from "./components/unControlledOnOff/UnControlledOnOff";
 import {number} from "prop-types";
+import {Select} from "./components/select/Select";
 
 
 function App() {
@@ -16,6 +17,13 @@ function App() {
         useState<SetRatingPropsType>(0)
     const [on, setOn] =
         useState(true)
+
+  /*  const items = [
+        {title: 'Minsk', value: 1},
+        {title: 'Moscow', value: 2},
+        {title: 'USA', value: 3},
+    ]*/
+    const OnChangeHandler = () => {}
     return (
         <div className={'App-header'}>
             <PageTitle title={'React TS shit how easy'}/>
@@ -23,11 +31,13 @@ function App() {
             <OnOffButton on={on} onClick={setOn}/>
             <Accordion titleValue={"Menu"}
                        items={[]}
+                       onClick={()=>{}}
                        collapsed={accordionCollapsed}
                        onChange={() => {
                            setAccordionCollapsed(!accordionCollapsed)
                        }}/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
+            <Select value={''} items={[]} onChange={()=>{}}/>
 
             <h3 className={'header-h3'} >Un controlled components</h3>
 
