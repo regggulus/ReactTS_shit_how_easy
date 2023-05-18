@@ -27,13 +27,14 @@ function App() {
     )
 //React.memo
     const PageTitleMemo = React.memo(PageTitle)
+    const OnOffButtonMemo = React.memo(OnOffButton)
     const AccordionMemo = React.memo(Accordion)
 
     return (
         <div className={'App-header'}>
             <PageTitleMemo title={'React TS shit how easy'}/>
             <h3 className={'header-h3'}>Controlled components</h3>
-            <OnOffButton on={on} onClick={setOn}/>
+            <OnOffButtonMemo on={on} onClick={setOn}/>
             <AccordionMemo titleValue={"Menu"}
                            items={[]}
                            onClick={() => {
