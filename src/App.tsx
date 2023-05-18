@@ -29,23 +29,27 @@ function App() {
     const PageTitleMemo = React.memo(PageTitle)
     const OnOffButtonMemo = React.memo(OnOffButton)
     const AccordionMemo = React.memo(Accordion)
+    const RatingMemo = React.memo(Rating)
+    const SelectMemo = React.memo(Select)
 
     return (
         <div className={'App-header'}>
             <PageTitleMemo title={'React TS shit how easy'}/>
             <h3 className={'header-h3'}>Controlled components</h3>
             <OnOffButtonMemo on={on} onClick={setOn}/>
-            <AccordionMemo titleValue={"Menu"}
-                           items={[]}
-                           onClick={() => {
-                           }}
-                           collapsed={accordionCollapsed}
-                           onChange={() => {
-                               setAccordionCollapsed(!accordionCollapsed)
-                           }}/>
-            <Rating value={ratingValue} onClick={setRatingValue}/>
-           {/* <Select value={'Minsk'} items={[]} onChange={() => {}}/> */}
-            <Select value={value} items={items} onChange={(value) => {setValue(value)}}/>
+            <AccordionMemo
+                titleValue={"Menu"}
+                items={[]}
+                onClick={() => {
+                }}
+                collapsed={accordionCollapsed}
+                onChange={() => {
+                    setAccordionCollapsed(!accordionCollapsed)
+                }}/>
+            <RatingMemo value={ratingValue} onClick={setRatingValue}/>
+            <SelectMemo value={value} items={items} onChange={(value) => {
+                setValue(value)
+            }}/>
             <h3 className={'header-h3'}>Un controlled components</h3>
 
             <UnControlledOnOff onChange={() => {
