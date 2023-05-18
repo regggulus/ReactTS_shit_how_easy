@@ -2,7 +2,7 @@ import React, {useState, KeyboardEvent, useEffect} from "react";
 import styles from './Select.module.css'
 
 
-type ItemType = {
+export type ItemType = {
     title: string
     value: any
 }
@@ -13,6 +13,7 @@ type SelectProsType = {
 }
 
 export function Select(props: SelectProsType) {
+
     const [active, setActive] = useState(true)
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
     const selectedItem = props.items.find(i => i.value === props.value)
@@ -23,7 +24,7 @@ export function Select(props: SelectProsType) {
         toggleItems()
     }
     const toggleItems = () => {
-        setActive(!active)
+            setActive(!active)
     }
     useEffect(() => {
         setHoveredElementValue(props.value)

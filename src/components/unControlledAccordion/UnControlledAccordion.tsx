@@ -6,7 +6,7 @@ type AccordionPropsType = {
 }
 
 export function UnControlledAccordion(props: AccordionPropsType) {
-    const [collapsed, dispatch] = useReducer(reducer, false)
+    const [collapsed, dispatch] = useReducer(reducer, {collapsed: false})
     return <div>
 
         <AccordionTitle title={props.titleValue} onClick= { () => {dispatch({type: TOGGLE_COLLAPSED})}}/>

@@ -17,32 +17,39 @@ function App() {
         useState<SetRatingPropsType>(0)
     const [on, setOn] =
         useState(true)
+    const [value, setValue] = useState()
+    const [items, setItems] = useState(
+        [
+            {value: 1, title: 'Minsk'},
+            {value: 2, title: 'Moscow'},
+            {value: 3, title: 'USA'},
+        ]
+    )
+//React.memo
+    const AccordionMemo = React.memo(Accordion)
 
-  /*  const items = [
-        {title: 'Minsk', value: 1},
-        {title: 'Moscow', value: 2},
-        {title: 'USA', value: 3},
-    ]*/
-    const OnChangeHandler = () => {}
     return (
         <div className={'App-header'}>
             <PageTitle title={'React TS shit how easy'}/>
-            <h3 className={'header-h3'} >Controlled components</h3>
+            <h3 className={'header-h3'}>Controlled components</h3>
             <OnOffButton on={on} onClick={setOn}/>
-            <Accordion titleValue={"Menu"}
-                       items={[]}
-                       onClick={()=>{}}
-                       collapsed={accordionCollapsed}
-                       onChange={() => {
-                           setAccordionCollapsed(!accordionCollapsed)
-                       }}/>
+            <AccordionMemo titleValue={"Menu"}
+                           items={[]}
+                           onClick={() => {
+                           }}
+                           collapsed={accordionCollapsed}
+                           onChange={() => {
+                               setAccordionCollapsed(!accordionCollapsed)
+                           }}/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
-            <Select value={''} items={[]} onChange={()=>{}}/>
+           {/* <Select value={'Minsk'} items={[]} onChange={() => {}}/> */}
+            <Select value={value} items={items} onChange={(value) => {setValue(value)}}/>
+            <h3 className={'header-h3'}>Un controlled components</h3>
 
-            <h3 className={'header-h3'} >Un controlled components</h3>
-
-            <UnControlledOnOff onChange={() => {}}/>
-            <UnControlledRating onChange={()=>{}} />
+            <UnControlledOnOff onChange={() => {
+            }}/>
+            <UnControlledRating onChange={() => {
+            }}/>
             <UnControlledAccordion titleValue={"Menu"}/>
             <UnControlledAccordion titleValue={"Users"}/>
 
@@ -62,4 +69,5 @@ function PageTitle(props: PageTitleProsType) {
         </div>
     )
 }
+
 export default App;
