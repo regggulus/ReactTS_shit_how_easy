@@ -1,79 +1,19 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
+import {Star} from "./components/Rating/Star";
 import {Accordion} from "./components/Accordion/Accordion";
-import {Rating, SetRatingPropsType} from "./components/Rating/Rating";
-import {OnOffButton} from "./components/onOff_button/OnOffButton";
-import {UnControlledAccordion} from "./components/unControlledAccordion/UnControlledAccordion";
-import {UnControlledRating} from "./components/unControlledRating/UnControlledRating";
-import {UnControlledOnOff} from "./components/unControlledOnOff/UnControlledOnOff";
-import {number} from "prop-types";
-import {Select} from "./components/select/Select";
+import {Rating} from "./components/Rating/Rating";
 
 
 function App() {
-    let [accordionCollapsed, setAccordionCollapsed] =
-        useState<boolean>(false)
-    let [ratingValue, setRatingValue] =
-        useState<SetRatingPropsType>(0)
-    const [on, setOn] =
-        useState(true)
-    const [value, setValue] = useState()
-    const [items, setItems] = useState(
-        [
-            {value: 1, title: 'Minsk'},
-            {value: 2, title: 'Moscow'},
-            {value: 3, title: 'USA'},
-        ]
-    )
-//React.memo
-    const PageTitleMemo = React.memo(PageTitle)
-    const OnOffButtonMemo = React.memo(OnOffButton)
-    const AccordionMemo = React.memo(Accordion)
-    const RatingMemo = React.memo(Rating)
-    const SelectMemo = React.memo(Select)
 
     return (
-        <div className={'App-header'}>
-            <PageTitleMemo title={'React TS shit how easy'}/>
-            <h3 className={'header-h3'}>Controlled components</h3>
-            <OnOffButtonMemo on={on} onClick={setOn}/>
-            <AccordionMemo
-                titleValue={"Menu"}
-                items={[]}
-                onClick={() => {
-                }}
-                collapsed={accordionCollapsed}
-                onChange={() => {
-                    setAccordionCollapsed(!accordionCollapsed)
-                }}/>
-            <RatingMemo value={ratingValue} onClick={setRatingValue}/>
-            <SelectMemo value={value} items={items} onChange={(value) => {
-                setValue(value)
-            }}/>
-            <h3 className={'header-h3'}>Un controlled components</h3>
-
-            <UnControlledOnOff onChange={() => {
-            }}/>
-            <UnControlledRating onChange={() => {
-            }}/>
-            <UnControlledAccordion titleValue={"Menu"}/>
-            <UnControlledAccordion titleValue={"Users"}/>
-
-
+        <div className={'App'}>
+            This is App component
+            <Rating/>
+            <Accordion/>
         </div>
     );
-}
-
-type PageTitleProsType = {
-    title: string
-}
-
-function PageTitle(props: PageTitleProsType) {
-    return (
-        <div>
-            <h2>{props.title}</h2>
-        </div>
-    )
 }
 
 export default App;
