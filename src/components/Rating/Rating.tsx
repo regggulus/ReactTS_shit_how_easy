@@ -1,5 +1,4 @@
 import React from "react";
-import {Star} from "./Star";
 
 
 export function Rating() {
@@ -12,4 +11,12 @@ export function Rating() {
             <Star/>
         </div>
     )
+
+    function Star() {
+        return (
+            <div>
+                <span>star</span>
+            </div>
+        )
+    }
 }
