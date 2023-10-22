@@ -10,8 +10,8 @@ function App() {
         <div className={'App'}>
             <PageTitle title={'This is Component'}/>
             <PageTitle title={'My Friends'}/>
-            <Accordion title={'Menu'}/>
-            <Accordion title={'Users'}/>
+            <Accordion title={'Menu'} collapsed={true}/>
+            <Accordion title={'Users'} collapsed={false}/>
             <Rating/>
         </div>
     );

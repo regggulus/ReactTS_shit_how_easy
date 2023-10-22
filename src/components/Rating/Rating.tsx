@@ -12,9 +12,9 @@ export function Rating() {
         </div>
     )
 
-    function Star() {
-        return (
-            <span>star </span>
-        )
-    }
+}
+function Star() {
+    return (
+        <span>star </span>
+    )
 }
