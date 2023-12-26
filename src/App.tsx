@@ -3,6 +3,7 @@ import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
+import {UnControlledAccordion} from "./components/UnControlledAccordion/UnControlledAccordion";
 
 
 function App() {
@@ -10,9 +11,11 @@ function App() {
     return (
         <div className={'App'}>
             <OnOff/>
+            <UnControlledAccordion title={'Menu'}/>
+            <UnControlledAccordion title={'Users'}/>
             <PageTitle title={'This is Component'}/>
             <PageTitle title={'My Friends'}/>
-            <Accordion title={'Menu'} collapsed={true}/>
+            <Accordion title={'Menu'} collapsed={false}/>
             <Accordion title={'Users'} collapsed={false}/>
             <Rating value={0}/>
             <Rating value={1}/>
