@@ -1,5 +1,4 @@
 import React from "react";
-import {setProjectAnnotations} from "@storybook/react";
 
 type RatingType = {
     value: 0 | 1 | 2 | 3 | 4 | 5
