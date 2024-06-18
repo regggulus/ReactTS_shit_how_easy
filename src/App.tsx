@@ -6,6 +6,8 @@ function App() {
     return (
         <div className={'App'}>
             This is component
+            <Rating/>
+            <Accordion/>
         </div>
     );
 }
@@ -13,11 +15,35 @@ function App() {
 function Rating() {
     return (
         <div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
+           <Star/>
+           <Star/>
+           <Star/>
+           <Star/>
+           <Star/>
+        </div>
+    )
+}
+function Star() {
+    return (
+        <div>star</div>
+    )
+}
+
+function Accordion() {
+    return (
+        <div>
+            <h3>Menu</h3>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+            <h3>Users</h3>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
         </div>
     )
 }
