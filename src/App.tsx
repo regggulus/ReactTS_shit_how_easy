@@ -5,7 +5,7 @@ function App() {
 
     return (
         <div className={'App'}>
-            This is component
+            <h2>This is component</h2>
             <Rating/>
             <Accordion/>
         </div>
@@ -32,17 +32,11 @@ function Star() {
 function Accordion() {
     return (
         <div>
+            <AccordionTitle title={'Menu'}/>
+            <AccordionBody/>
+            <AccordionTitle title={'Users'}/>
+            <AccordionBody/>
 
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
         </div>
     )
 }
@@ -51,9 +45,16 @@ type AccordionTitleType = {
 }
 function AccordionTitle({title}: AccordionTitleType) {
     return (
-        <div>
             <h3>{title}</h3>
-        </div>
+    )
+}
+function AccordionBody() {
+    return (
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
     )
 }
 export default App;
