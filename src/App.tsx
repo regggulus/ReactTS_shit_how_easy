@@ -2,15 +2,16 @@ import React from 'react';
 import './App.css';
 import {Accordion} from "./components/accordion/Accordion";
 import {Rating} from "./components/rating/Rating";
-import {TitleMain} from "./components/titleMain/TitleMain";
+import {PageTitle} from "./components/titleMain/PageTitle";
 
 function App() {
 
     return (
         <div className={'App'}>
-            <TitleMain title={'This is component'}/>
+            <PageTitle title={'This is component'}/>
             <Rating/>
-            <Accordion/>
+            <Accordion title={'Menu'} collapsed={true}/>
+            <Accordion title={'Users'} collapsed={false}/>
         </div>
     );
 }

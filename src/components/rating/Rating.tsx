@@ -1,19 +1,26 @@
 import React from "react";
+import {setProjectAnnotations} from "@storybook/react";
 
 export function Rating() {
     return (
         <div>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
+            <Star selected={true}/>
+            <Star selected={true}/>
+            <Star selected={true}/>
+            <Star selected={false}/>
+            <Star selected={false}/>
         </div>
     )
 }
 
-function Star() {
+type StarType = {
+    selected: boolean
+}
+
+function Star({selected}: StarType) {
+
     return (
-        <div>star</div>
+
+        <span>{selected}<b>star </b></span>
     )
 }
