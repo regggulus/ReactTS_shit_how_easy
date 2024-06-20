@@ -32,18 +32,27 @@ function Star() {
 function Accordion() {
     return (
         <div>
-            <h3>Menu</h3>
+
             <ul>
                 <li>1</li>
                 <li>2</li>
                 <li>3</li>
             </ul>
-            <h3>Users</h3>
             <ul>
                 <li>1</li>
                 <li>2</li>
                 <li>3</li>
             </ul>
+        </div>
+    )
+}
+type AccordionTitleType = {
+    title: string
+}
+function AccordionTitle({title}: AccordionTitleType) {
+    return (
+        <div>
+            <h3>{title}</h3>
         </div>
     )
 }
