@@ -7,17 +7,10 @@ type AccordionType = {
 
 export function Accordion({title, collapsed}: AccordionType) {
     return (
-
         <div>
-            {collapsed
-                ?
-                <div>
-                    <AccordionTitle title={title}/>
-                    <AccordionBody/>
-                </div>
-                :
-                <AccordionTitle title={title}/>
-            }
+
+            <AccordionTitle title={title}/>
+            {!collapsed && <AccordionBody/>}
         </div>
     )
 }
