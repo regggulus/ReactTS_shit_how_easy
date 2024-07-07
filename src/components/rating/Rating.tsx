@@ -1,14 +1,17 @@
 import React from "react";
 import {setProjectAnnotations} from "@storybook/react";
-
-export function Rating() {
+export type RatingType = {
+    value: 0 | 1 | 2 | 3 | 4 | 5
+}
+export function Rating({value}: RatingType) {
     return (
         <div>
-            <Star selected={true}/>
-            <Star selected={true}/>
-            <Star selected={true}/>
-            <Star selected={false}/>
-            <Star selected={false}/>
+            <Star selected={value > 0}/>
+            <Star selected={value > 1}/>
+            <Star selected={value > 2}/>
+            <Star selected={value > 3}/>
+            <Star selected={value > 4}/>
+
         </div>
     )
 }
