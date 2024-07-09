@@ -8,7 +8,7 @@ export type RatingType = {
 export function Rating({value}: RatingType) {
     return (
         <div>
-            <Star selected={value > 2}/>
+            <Star selected={value > 0}/>
             <Star selected={value > 1}/>
             <Star selected={value > 2}/>
             <Star selected={value > 3}/>
