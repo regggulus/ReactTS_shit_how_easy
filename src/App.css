@@ -1,32 +1,6 @@
 .App {
     margin: 30px;
-    /*display: flex;*/
-    /*justify-content: center;*/
+    display: flex;
+    justify-content: center;
 }
-
-/*.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}*/
-
-/*#282c34;*/
-/*.App-header {
-    background-color: #414d64;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}*/
-
-/*.header-h3 {
-    display: flex;
-    justify-content: center;
-    width: 100vh;
-    border: 5px #61dafb solid;
-    border-radius: 10px;
-    padding: 10px;
-}*/
 
