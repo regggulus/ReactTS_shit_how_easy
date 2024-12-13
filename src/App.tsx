@@ -29,17 +29,22 @@ function Accordion () {
     return (
         <div>
             <AccordionTitle/>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
+            <AccordionBody/>
         </div>
     )
 }
 function AccordionTitle () {
     return (
         <h3>Users</h3>
+    )
+}
+function AccordionBody () {
+    return (
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
     )
 }
 function Star () {
