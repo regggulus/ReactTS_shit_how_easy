@@ -6,7 +6,7 @@ function App() {
 
     return (
         <div className={'App'}>
-
+<div>This is components App</div>
         </div>
     );
 }
