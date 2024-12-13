@@ -6,13 +6,17 @@ function App() {
 
     return (
         <div className={'App'}>
-            <h3>This is components App</h3>
+            <AppTitle/>
             <Rating/>
             <Accordion/>
         </div>
     );
 }
-
+function AppTitle () {
+    return (
+        <h3>This is components App</h3>
+    )
+}
 function Rating() {
     return (
         <div>
