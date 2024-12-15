@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {Accordion} from "./components/Accordion";
 import {Rating} from "./components/Rating";
+import {PageTitle} from "./components/PageTitle";
 
 
 function App() {
@@ -18,15 +19,6 @@ function App() {
             <Accordion title = {'Users'}/>
         </div>
     );
-}
-
-type PageTitleType = {
-    title: string
-}
-function PageTitle (props: PageTitleType) {
-    return (
-        <h3>{props.title}</h3>
-    )
 }
 
 export default App;
