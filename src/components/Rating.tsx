@@ -1,7 +1,7 @@
 import React from "react";
 
 type RatingType = {
-    value: number
+    value: 0 | 1 | 2 | 3 | 4 | 5
 }
 export function Rating(props: RatingType) {
     if(props.value === 1) {
