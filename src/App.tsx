@@ -3,6 +3,7 @@ import './App.css';
 import {Accordion} from "./components/Accordion";
 import {Rating} from "./components/Rating";
 import {PageTitle} from "./components/PageTitle";
+import {OnOff} from "./components/OnOff";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Rating value = {5}/>
             <Accordion title = {'Users'} collapsed = {true}/>
             <Accordion title = {'Menu'} collapsed = {false}/>
+            <OnOff switchings={false}/>
         </div>
     );
 }
