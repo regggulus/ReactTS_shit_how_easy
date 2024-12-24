@@ -5,18 +5,13 @@ type AccordionType = {
     collapsed: boolean
 }
 export function Accordion (props: AccordionType) {
-    if(props.collapsed) {
+
         return (
             <div>
                 <AccordionTitle title={props.title}/>
-                <AccordionBody/>
+                {!props.collapsed && <AccordionBody/>}
             </div>
         )
-    }else {
-        return <AccordionTitle title={props.title}/>
-    }
-
-
 }
 
 type AccordionTitleType = {
