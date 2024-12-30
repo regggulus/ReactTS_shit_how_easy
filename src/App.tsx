@@ -10,7 +10,7 @@ function App() {
 
     return (
         <div className={'App'}>
-            <PageTitle title = {'This is components App'}/>
+           {/* <PageTitle title = {'This is components App'}/>
             <Rating value = {0}/>
             <Rating value = {1}/>
             <Rating value = {2}/>
@@ -18,8 +18,9 @@ function App() {
             <Rating value = {4}/>
             <Rating value = {5}/>
             <Accordion title = {'Users'} collapsed = {true}/>
-            <Accordion title = {'Menu'} collapsed = {false}/>
-            <OnOff switchings={false}/>
+            <Accordion title = {'Menu'} collapsed = {false}/>*/}
+            <OnOff title={'On'} switchings={false}/>
+            <OnOff title={'Off'} switchings={false}/>
         </div>
     );
 }

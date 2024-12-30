@@ -1,9 +1,10 @@
 import React from "react";
 
 export type OnOffType = {
+    title: string
     switchings: boolean
 }
-export function OnOff({switchings}:OnOffType) {
+export function OnOff({title, switchings}:OnOffType) {
     const indicatorStyle: React.CSSProperties = {
         border: '2px solid black',
         width: '15px',
@@ -25,54 +26,10 @@ export function OnOff({switchings}:OnOffType) {
     };
     return (
         <div>
-            <div style={{ ...buttonStyle, backgroundColor: 'greenyellow'}}>On</div><div style={{ ...indicatorStyle, backgroundColor: 'greenyellow' && 'coral'}}></div>
-            {!switchings && <div style={{ ...buttonStyle, backgroundColor: 'coral'}}>Off</div>}
+            <div style={{ ...buttonStyle, backgroundColor: 'greenyellow'}}>{title}</div>
+            <div style={{ ...indicatorStyle, backgroundColor: 'greenyellow' && 'coral'}}></div>
+           <div style={{ ...buttonStyle, backgroundColor: 'coral'}}>{title}</div>
 
         </div>
     );
-};
-
-type OnType = {
-    title: string
-}
-function On({title}: OnType) {
-    const buttonStyle: React.CSSProperties = {
-        display: 'inline-block',
-        padding: '10px 20px',
-        margin: '5px',
-        border: '2px solid black',
-        borderRadius: '5px',
-        color: 'white',
-        backgroundColor: 'gray',
-        cursor: 'pointer',
-        textAlign: 'center',
-        userSelect: 'none', // Запретить выделение текста
-    };
-    return (
-        <div
-            style={{ ...buttonStyle, backgroundColor: 'greenyellow' }}
-        >{title}</div>
-    )
-}
-type OffType = {
-    title: string
-}
-function Off({title}:   OffType) {
-    const buttonStyle: React.CSSProperties = {
-        display: 'inline-block',
-        padding: '10px 20px',
-        margin: '5px',
-        border: '2px solid black',
-        borderRadius: '5px',
-        color: 'white',
-        backgroundColor: 'gray',
-        cursor: 'pointer',
-        textAlign: 'center',
-        userSelect: 'none', // Запретить выделение текста
-    };
-    return (
-        <div
-            style={{ ...buttonStyle, backgroundColor: 'coral' }}
-        >{title}</div>
-    )
 }
