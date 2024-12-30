@@ -1,10 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 
 export type OnOffType = {
-    title: string
     switchings: boolean
 }
-export function OnOff({title, switchings}:OnOffType) {
+
+export function OnOff({switchings}: OnOffType) {
     const indicatorStyle: React.CSSProperties = {
         border: '2px solid black',
         width: '15px',
@@ -24,11 +24,15 @@ export function OnOff({title, switchings}:OnOffType) {
         textAlign: 'center',
         userSelect: 'none', // Запретить выделение текста
     };
+    const [on, setOn] = useState(true)
     return (
         <div>
-            <div style={{ ...buttonStyle, backgroundColor: 'greenyellow'}}>{title}</div>
-            <div style={{ ...indicatorStyle, backgroundColor: 'greenyellow' && 'coral'}}></div>
-           <div style={{ ...buttonStyle, backgroundColor: 'coral'}}>{title}</div>
+            <div style={{...buttonStyle, backgroundColor: 'greenyellow'}}>
+                {!switchings && on}
+                on
+            </div>
+            <div style={{...indicatorStyle, backgroundColor: 'greenyellow' && 'coral'}}></div>
+            <div style={{...buttonStyle, backgroundColor: 'coral'}}>off</div>
 
         </div>
     );
