@@ -10,30 +10,40 @@ export function OnOff({switchings}: OnOffType) {
         width: '15px',
         height: '15px',
         borderRadius: '15px',
-        backgroundColor: 'gray',
-    };
-    const buttonStyle: React.CSSProperties = {
+        backgroundColor: switchings ? 'greenyellow' : "coral",
+        textAlign: 'center',
+        color: "white"
+    }
+    const onStyle: React.CSSProperties = {
         display: 'inline-block',
         padding: '10px 20px',
         margin: '5px',
         border: '2px solid black',
         borderRadius: '5px',
         color: 'white',
-        backgroundColor: 'gray',
+        backgroundColor: switchings ? 'greenyellow' : 'gray',
+        cursor: 'pointer',
+        textAlign: 'center',
+        userSelect: 'none', // Запретить выделение текста
+    }
+    const offStyle: React.CSSProperties = {
+        display: 'inline-block',
+        padding: '10px 20px',
+        margin: '5px',
+        border: '2px solid black',
+        borderRadius: '5px',
+        color: 'white',
+        backgroundColor: switchings ? 'gray' : 'coral',
         cursor: 'pointer',
         textAlign: 'center',
         userSelect: 'none', // Запретить выделение текста
     };
     const [on, setOn] = useState(true)
-    return (
-        <div>
-            <div style={{...buttonStyle, backgroundColor: 'greenyellow'}}>
-                {!switchings && on}
-                on
+        return (
+            <div>
+             <div style={onStyle}>on</div>
+             <div style={offStyle}>off</div>
+             <div style={indicatorStyle}>i</div>
             </div>
-            <div style={{...indicatorStyle, backgroundColor: 'greenyellow' && 'coral'}}></div>
-            <div style={{...buttonStyle, backgroundColor: 'coral'}}>off</div>
-
-        </div>
-    );
+        )
 }
