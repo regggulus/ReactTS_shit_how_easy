@@ -1,16 +1,19 @@
 import React, {useState} from "react";
 
 export type OnOffType = {
-    switchings: boolean
+    // switchings: boolean
 }
 
-export function OnOff({switchings}: OnOffType) {
+export function OnOff() {
+    const [on, setOn] = useState(false)
+
     const indicatorStyle: React.CSSProperties = {
+        display: 'inline-block',
         border: '2px solid black',
         width: '15px',
         height: '15px',
         borderRadius: '15px',
-        backgroundColor: switchings ? 'greenyellow' : "coral",
+        backgroundColor: on ? 'greenyellow' : "coral",
         textAlign: 'center',
         color: "white"
     }
@@ -21,7 +24,7 @@ export function OnOff({switchings}: OnOffType) {
         border: '2px solid black',
         borderRadius: '5px',
         color: 'white',
-        backgroundColor: switchings ? 'greenyellow' : 'gray',
+        backgroundColor: on ? 'greenyellow' : 'gray',
         cursor: 'pointer',
         textAlign: 'center',
         userSelect: 'none', // Запретить выделение текста
@@ -33,16 +36,16 @@ export function OnOff({switchings}: OnOffType) {
         border: '2px solid black',
         borderRadius: '5px',
         color: 'white',
-        backgroundColor: switchings ? 'gray' : 'coral',
+        backgroundColor: on ? 'gray' : 'coral',
         cursor: 'pointer',
         textAlign: 'center',
         userSelect: 'none', // Запретить выделение текста
     };
-    const [on, setOn] = useState(true)
+
         return (
             <div>
-             <div style={onStyle}>on</div>
-             <div style={offStyle}>off</div>
+             <div style={onStyle} onClick={ () => {setOn(true)}}>on</div>
+             <div style={offStyle} onClick={ () => {setOn(false)}}>off</div>
              <div style={indicatorStyle}>i</div>
             </div>
         )
