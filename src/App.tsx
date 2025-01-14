@@ -26,6 +26,7 @@ function App() {
             <UnControlledAccordion title={'Menu'} />
             <UnControlledAccordion title={'User'} />
             <UnControlledRating/>
+            <UnControlledRating/>
 
         </div>
     );
