@@ -29,10 +29,13 @@ type SelectedType = {
 }
 
 function Star(props: SelectedType) {
-    if (props.selected === true) {
-        return <span><b>star </b></span>
+    return    props.selected ? <span><b>star </b></span> : <span>star </span>
+
+
+   /* if (props.selected === true) {
+        return
     } else {
-        return <span>star </span>
-    }
+
+    }*/
 
 }
