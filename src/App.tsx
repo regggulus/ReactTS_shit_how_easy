@@ -5,6 +5,7 @@ import {Rating} from "./components/controlledComponents/Rating";
 import {PageTitle} from "./components/controlledComponents/PageTitle";
 import {OnOff} from "./components/OnOff";
 import {UnControlledAccordion} from "./components/unControlledComponents/UnControlledAccordion";
+import {UnControlledRating} from "./components/unControlledComponents/UnControlledRating";
 
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
             <OnOff/>
             <UnControlledAccordion title={'Menu'} />
             <UnControlledAccordion title={'User'} />
+            <UnControlledRating/>
+
         </div>
     );
 }
