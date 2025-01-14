@@ -5,15 +5,19 @@ type RatingType = {
 }
 
 export function UnControlledRating() {
-    const [meaning, setMeaning] = useState(0)
+    const [value, setValue] = useState(0)
     return (
         <div>
-            <Star selected={meaning > 0}/><button onClick={()=> {setMeaning(meaning
-        )}}>add</button>
-            <Star selected={meaning > 1}/>
-            <Star selected={meaning > 2}/>
-            <Star selected={meaning > 3}/>
-            <Star selected={meaning > 4}/>
+            <Star selected={value > 0}/><button onClick={()=> {setValue(1
+        )}}>1</button>
+            <Star selected={value > 1}/><button onClick={()=> {setValue(2
+        )}}>2</button>
+            <Star selected={value > 2}/><button onClick={()=> {setValue(3
+        )}}>3</button>
+            <Star selected={value > 3}/><button onClick={()=> {setValue(4
+        )}}>4</button>
+            <Star selected={value > 4}/><button onClick={()=> {setValue(5
+        )}}>5</button>
 
         </div>
 
